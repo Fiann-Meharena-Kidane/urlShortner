@@ -11,33 +11,52 @@
 </head>
 <body>
     
+
     <div class="container">
         <div class="screen">
             <div class="screen__content">
+
+
                 <form class="login" method="post">
                     {% csrf_token %}
+
+                    
+                    {% if link %}
+
                     <div class="login__field">
-                        <input type="text" class="login__input" placeholder="Enter Link">
+                        <input name="link" type="text" class="login__input" placeholder="{{ link }}">
+                    </div>
+
+                    <button class="button login__submit">
+                        <span class="button__text"> Link Generated ! </span>
+                    </button> <br><br>
+                    
+                        
+                    <div class="login__field">
+                        <input onclick="this.select()" type="text" class="login__input short_link" value="{{ short_link }}"><br><br>
+                        <span class="copied"></span>
+                    </div>
+
+                    {% else %}
+
+                    <div class="login__field">
+                        <input name="link" type="text" class="login__input" placeholder="Enter Link">
                     </div>
 
                     <button class="button login__submit">
                         <span class="button__text">Generate Shorter Link </span>
                     </button> <br><br>
-                    
-                    {% if result %}
-                        
-                    <div class="login__field">
-                        <input type="text" class="login__input" placeholder="Your Link">
-                    </div>
 
                     {% endif %}
 
                 </form>
+
                  
             </div>
 	
         </div>
     </div>
 
+    <script src="{% static 'scripts/index.js' %}"></script>
 </body>
 </html>
