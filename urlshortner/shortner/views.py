@@ -11,7 +11,7 @@ from . models import Url
 def index(request):
     if request.method=='POST':
         link=request.POST['link']
-        short_link='www.finan.com/'
+        short_link='http://127.0.0.1:8000/go/'
         letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
         for i in range(6):
@@ -33,7 +33,12 @@ def login(request):
 
 
 def go(request, url):
-     return render (request,'form.html', context={
-         'url':url,
+    
+    short_link='http://127.0.0.1:8000/go/'+url
+    original_link=Url.objects.get(short_link=short_link)
+     
+    return render (request,'form.html', context={
+         'url':original_link.original_link,
+    
      })
      
