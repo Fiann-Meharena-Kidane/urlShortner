@@ -49,10 +49,10 @@ def go(request, url):
     short_link='http://127.0.0.1:8000/go/' + url
     original_link=Url.objects.get(short_link=short_link)
     
-    # return redirect(original_link.original_link)  # easiest way, just redirect to the actual url, 
+    return redirect(original_link.original_link)  # easiest way, just redirect to the actual url, 
      
     # bit complex way, pass actual url to an html          page,then auto click it using js.
-    return render (request,'form.html', context={ 'year':year    
+    # return render (request,'form.html', context={ 'year':year    
     
-     })
+    #  })
      
