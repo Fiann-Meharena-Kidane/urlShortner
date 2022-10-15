@@ -25,11 +25,11 @@
                     {% if link %}
 
                     <div class="login__field">
-                        <input name="link" type="text" class="login__input" placeholder="{{ link }}">
+                        <input name="link" type="text" class="login__input" placeholder="Enter another link...">
                     </div>
 
-                    <button class="button login__submit">
-                        <span class="button__text"> Link Generated ! </span>
+                    <button class="button login__submit link-generated">
+                        <span class="button__text">Generated! Continue ?  </span>
                     </button> <br><br>
                     
                         
@@ -41,11 +41,11 @@
                     {% else %}
 
                     <div class="login__field">
-                        <input name="link" type="text" class="login__input" placeholder="Enter Link">
+                        <input name="link" type="text" class="login__input" placeholder="Enter Link" required>
                     </div>
 
                     <button class="button login__submit">
-                        <span class="button__text">Generate Shorter Link </span>
+                        <span class="button__text generated-text">Generate Shorter Link </span>
                     </button> <br><br>
 
                     {% endif %}
@@ -62,7 +62,7 @@
       <!-- Site footer -->
       <footer class="site-footer">
  
-              <p class="copyright-text">Finan Meharena Kidane &copy; {{ year }} 2022.</p>
+              <p class="copyright-text"> &copy; Finan Meharena Kidane  {{ year }}.</p>
                <ul class="contact">
 
                  <li><a href="mailto:finanmeharenak@gmail.com" target="_blank"><i class="bi bi-envelope-fill" style="font-size: 2rem;"></i></a></li> 
