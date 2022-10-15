@@ -166,4 +166,6 @@ body {
 	
 }
 
- 
+.bi-linkedin{
+	transform: translateY(4px);
+}
