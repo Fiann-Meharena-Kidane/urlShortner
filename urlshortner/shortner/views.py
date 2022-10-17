@@ -1,7 +1,7 @@
 from multiprocessing import context
 from random import random, choice
 import re
-import string
+import string , random
 from django.shortcuts import redirect, render
 from urllib3 import HTTPResponse
 from . models import Url 
@@ -16,7 +16,7 @@ def index(request):
     if request.method=='POST':
         link=request.POST['link']
         short_link='http://127.0.0.1:8000/go/'
-        letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        letters = [letter for letter in string.ascii_lowercase]
         
         all_link_objects=Url.objects.all()
         all_links=[object.original_link for object in all_link_objects]
